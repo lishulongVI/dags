@@ -29,6 +29,7 @@ class Email:
     def send_email(self):
         # email = EmailOperator(to=self.to, task_id=self.task_id, subject=self.subject, html_content=self.html_content)
         # email.execute(context=None)
+        email.send_email(to=self.to, subject=self.subject, html_content=self.html_content)
         email.send_email(**vars(self))
 
     def send_email_template(self, file_name, kargs=None):

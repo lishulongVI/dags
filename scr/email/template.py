@@ -12,26 +12,26 @@ quality = """<!DOCTYPE html>
 </head>
 <body>
 <hr>
-<h2>第一项 summary </h2>
+<h2>summary </h2>
 <ul>
     <li>summary_1:[summary_1]</li>
     <li></li>
 </ul>
 
-<h2>第二项 summary </h2>
+<h2>summary </h2>
 <ul>
     <li>count:[count]</li>
     <li></li>
 </ul>
 <hr>
 
-<h2>第一项 summary </h2>
+<h2>summary </h2>
 <ul>
     <li>summary_1:[summary_1]</li>
     <li></li>
 </ul>
 
-<h2>第二项 summary </h2>
+<h2>summary </h2>
 <ul>
     <li>count:[count]</li>
     <li></li>
