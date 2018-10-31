@@ -34,17 +34,13 @@ class Email:
 
     def send_email_template(self, file_name, kargs=None):
         if isinstance(kargs, dict):
-            self.html_content = getattr(template, file_name)
+            self.html_content = get_html_content(file_name, kargs)
 
         self.send_email()
 
 
 def get_html_content(file_name, dicts):
-    with open(base_path.format(file_name), 'r', encoding='utf-8') as file:
-        c = file.read()
-        for i in dicts.keys():
-            c = c.replace('[{}]'.format(i), str(dicts.get(i)))
-        return c
-
-# print(get_html_content('quality', {'count': 1, 'summary_1': 900}))
-# print(getattr(template, 'quality'))
+    c = getattr(template, file_name)
+    for i in dicts.keys():
+        c = c.replace('[{}]'.format(i), str(dicts.get(i)))
+    return c
