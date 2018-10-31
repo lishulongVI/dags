@@ -37,10 +37,11 @@ class Email:
 
 
 def get_html_content(file_name, dicts):
-    with open(base_path.format(file_name), 'r') as file:
-        c = file.read()
+    with open(base_path.format(file_name), 'rb') as file:
+        c = file.read().decode(encoding='utf-8')
         for i in dicts.keys():
             c = c.replace('[{}]'.format(i), str(dicts.get(i)))
         return c
 
-# print(get_html_content('quality', {'count': 1}))
+
+# print(get_html_content('quality', {'count': 1, 'summary_1': 900}))
