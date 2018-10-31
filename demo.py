@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-import airflow
+from airflow import utils
 from airflow.models import DAG
 from airflow.operators.python_operator import PythonOperator
 
@@ -9,12 +9,12 @@ from scr.quality.test import pt
 
 args = {
     'owner': 'lishulong',
-    'start_date': airflow.utils.dates.days_ago(2),
+    'start_date': utils.dates.days_ago(2),
     'depends_on_past': False,
 }
 
 dag = DAG(
-    dag_id='python_quality', default_args=args,
+    dag_id='quality', default_args=args,
     schedule_interval='0 0 * * *'
 
 )

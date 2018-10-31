@@ -31,3 +31,5 @@ email = EmailOperator(
     cc='lishulong.never@gmail.com',
     bcc='lishulong.never@gmail.com',
     mime_subtype='mixed')
+
+# email.execute(context=None)
