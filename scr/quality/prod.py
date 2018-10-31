@@ -17,7 +17,10 @@ def ppt():
 def ppt_email():
     from datetime import datetime
     print('*' * 20)
-    date = 'product time:', datetime.now()
+    date = 'product time: {}'.format(datetime.now())
     quality = {'count': 1, 'summary_1': 200}
     if True:
         Email(to='lishulong.never@gmail.com', subject=date).send_email_template('quality', quality)
+
+
+# print(ppt_email())
