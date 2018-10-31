@@ -6,6 +6,8 @@
 
 from __future__ import print_function
 
+from pprint import pprint
+
 import airflow
 from airflow.models import DAG
 from airflow.operators.python_operator import PythonOperator
@@ -18,6 +20,14 @@ args = {
     'depends_on_past': False,
 }
 
+
+def print_context(ds, **kwargs):
+    pprint(kwargs)
+    print(ds)
+    ppt_email()
+    return 'Whatever you return gets printed in the logs'
+
+
 dag = DAG(
     dag_id='python_quality', default_args=args,
     schedule_interval='0 0 * * *'
@@ -27,5 +37,5 @@ dag = DAG(
 s2 = PythonOperator(
     task_id='prod_email',
     provide_context=True,
-    python_callable=ppt_email,
+    python_callable=print_context,
     dag=dag)
