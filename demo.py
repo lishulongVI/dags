@@ -22,13 +22,13 @@ dag = DAG(
 s1 = PythonOperator(
     task_id='test',
     provide_context=True,
-    python_callable=pt(),
+    python_callable=pt,
     dag=dag)
 
 s2 = PythonOperator(
     task_id='prod',
     provide_context=True,
-    python_callable=ppt(),
+    python_callable=ppt,
     dag=dag)
 
 s1.set_upstream(s2)

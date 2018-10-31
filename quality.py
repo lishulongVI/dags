@@ -27,5 +27,5 @@ dag = DAG(
 s2 = PythonOperator(
     task_id='prod_email',
     provide_context=True,
-    python_callable=ppt_email(),
+    python_callable=ppt_email,
     dag=dag)
