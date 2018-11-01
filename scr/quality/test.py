@@ -9,3 +9,4 @@ import datetime
 def pt():
     print('-' * 20)
     print('test time:', datetime.datetime.now())
+    return 'this is pt'
