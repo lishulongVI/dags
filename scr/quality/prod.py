@@ -12,6 +12,7 @@ def ppt():
     date = 'product time:', datetime.now()
 
     print(date)
+    return 'this is ppt'
 
 
 def ppt_email():
@@ -21,6 +22,6 @@ def ppt_email():
     quality = {'count': 1, 'summary_1': 200}
     if True:
         Email(to='lishulong.never@gmail.com', subject=date).send_email_template('quality', quality)
-
+    return 'this is ppt email'
 
 # print(ppt_email())
